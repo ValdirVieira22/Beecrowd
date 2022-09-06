@@ -1,0 +1,18 @@
+#include <iostream>
+ 
+using namespace std;
+ 
+int main() {
+    
+ int a, b, c, MaiorAB, maior;
+
+scanf( "%i %i %i", &a, &b, &c);
+
+a = (a + b + abs(a - b)) / 2;
+
+if(a > c)
+    printf("%i eh o maior\n", a); 
+
+else
+    printf("%i eh o maior\n", c);
+return 0; }
