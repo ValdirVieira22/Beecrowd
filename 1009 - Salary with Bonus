@@ -1,0 +1,19 @@
+#include <iostream>
+ 
+using namespace std;
+ 
+int main() {
+    
+    char N[50];
+    double S, M, T;
+    
+    scanf("%s", &N);
+    scanf("%lf", &S);
+    scanf("%lf", &M);
+    
+    T = S + (M/100*15);
+    
+    printf("TOTAL = R$ %.2lf\n", T);
+    
+    return 0;
+}
