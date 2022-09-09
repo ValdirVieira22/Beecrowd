@@ -1,0 +1,60 @@
+//Read a value of floating point with two decimal places. This represents a monetary value. After this, calculate the smallest possible number of notes and coins on which the value can be decomposed. The considered notes are of 100, 50, 20, 10, 5, 2. The possible coins are of 1, 0.50, 0.25, 0.10, 0.05 and 0.01. Print the message “NOTAS:” followed by the list of notes and the message “MOEDAS:” followed by the list of coins.
+
+Input
+The input file contains a value of floating point N (0 ≤ N ≤ 1000000.00).
+
+Output
+Print the minimum quantity of banknotes and coins necessary to change the initial value.//
+
+
+
+#include <iostream>
+using namespace std;
+ 
+int main() {
+    
+    double t;
+    int  cem, cinq, vin, dez, cinco, dois, um, cinquenta, vinte5, dezc, cincoc, umc;
+    
+    scanf("%lf", &t);
+    
+    cem = t/100.0;
+    t = t - (cem*100);
+  
+    cinq = t/50.0;
+    t = t - (cinq*50);
+   
+    vin = t/20.0;
+    t = t - (vin*20);
+
+    dez = t/10.0;
+    t = t - (dez*10);
+    
+	cinco = t/5.00;
+    t = t - (cinco*5);
+ 
+    dois = t/2.00;
+    t = t - (dois*2);
+  
+    um = t/1.00;
+    t = t - (um*1);
+ 
+    cinquenta = t/0.50;
+    t = t - (cinquenta*0.5);
+  
+    vinte5 = t/0.25;
+    t = t - (vinte5*0.25);
+
+    dezc = t/0.10;
+    t = t - (dezc*0.10);
+ 
+    cincoc = t/0.05;
+    t = t - (cincoc*0.05);
+
+    umc = t/0.01;
+    t = t - (umc*0.01);
+    
+    printf("NOTAS:\n%d nota(s) de R$ 100.00\n%d nota(s) de R$ 50.00\n%d nota(s) de R$ 20.00\n%d nota(s) de R$ 10.00\n%d nota(s) de R$ 5.00\n%d nota(s) de R$ 2.00\nMOEDAS:\n%d moeda(s) de R$ 1.00\n%d moeda(s) de R$ 0.50\n%d moeda(s) de R$ 0.25\n%d moeda(s) de R$ 0.10\n%d moeda(s) de R$ 0.05\n%d moeda(s) de R$ 0.01\n", cem, cinq, vin, dez, cinco, dois, um, cinquenta, vinte5, dezc, cincoc, umc);
+
+    return 0;
+}
