@@ -1,0 +1,31 @@
+//Read an integer value corresponding to a person's age (in days) and print it in years, months and days, followed by its respective message “ano(s)”, “mes(es)”, “dia(s)”.
+
+Note: only to facilitate the calculation, consider the whole year with 365 days and 30 days every month. In the cases of test there will never be a situation that allows 12 months and some days, like 360, 363 or 364. This is just an exercise for the purpose of testing simple mathematical reasoning.
+
+Input
+The input file contains 1 integer value.
+
+Output
+Print the output.//
+
+
+
+#include <iostream>
+ 
+using namespace std;
+ 
+int main() {
+    
+    int d, a, m;
+    
+    scanf("%d", &d);
+    
+    a = d/365.0;
+    d = d - (a*365);
+    m = d/30.0;
+    d = d - (m*30);
+    
+    printf("%d ano(s)\n%d mes(es)\n%d dia(s)\n", a, m, d);
+    
+    return 0;
+}
