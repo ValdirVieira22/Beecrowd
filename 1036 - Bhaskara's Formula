@@ -1,0 +1,36 @@
+//Read 3 floating-point numbers. After, print the roots of bhaskara’s formula. If it's impossible to calculate the roots because a division by zero or a square root of a negative number, presents the message “Impossivel calcular”.
+
+Input
+Read 3 floating-point numbers (double) A, B and C.
+
+Output
+Print the result with 5 digits after the decimal point or the message if it is impossible to calculate.//
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+	
+	double a, b, c, r1, r2, delta;
+	
+	scanf("%lf" "%lf" "%lf", &a, &b, &c);
+	
+	delta = (b*b) - (4*a*c);
+	
+	r1 = ((-b) + (pow(delta,1.0/2.0)) )/ (2*a);
+	r2 = ((-b) - (pow(delta,1.0/2.0)) )/ (2*a);
+	
+	if(delta <= 0 || a == 0 || b == 0 || c == 0){
+		
+		printf("Impossivel calcular\n");
+		
+	}
+	else{
+		
+		printf("R1 = %.5lf\nR2 = %.5lf\n",r1, r2);
+		
+	}
+}
