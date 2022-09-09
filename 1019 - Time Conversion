@@ -1,0 +1,29 @@
+//Read an integer value, which is the duration in seconds of a certain event in a factory, and inform it expressed in hours:minutes:seconds.
+
+Input
+The input file contains an integer N.
+
+Output
+Print the read time in the input file (seconds) converted in hours:minutes:seconds.//
+
+
+
+#include <iostream>
+ 
+using namespace std;
+ 
+int main() {
+    
+    int h, m, s;
+    
+    scanf("%d", &s);
+    
+    h = s/3600.0;
+    s = s - (h*3600);
+    m = s/60.0;
+    s = s - (m*60);
+    
+    printf("%d:%d:%d\n", h, m, s);
+    
+    return 0;
+}
