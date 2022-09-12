@@ -1,0 +1,94 @@
+//Read 3 double numbers (A, B and C) representing the sides of a triangle and arrange them in decreasing order, so that the side A is the biggest of the three sides. Next, determine the type of triangle that they can make, based on the following cases always writing an appropriate message:
+if A ≥ B + C, write the message: NAO FORMA TRIANGULO
+if A2 = B2 + C2, write the message: TRIANGULO RETANGULO
+if A2 > B2 + C2, write the message: TRIANGULO OBTUSANGULO
+if A2 < B2 + C2, write the message: TRIANGULO ACUTANGULO
+if the three sides are the same size, write the message: TRIANGULO EQUILATERO
+if only two sides are the same and the third one is different, write the message: TRIANGULO ISOSCELES
+Input
+The input contains three double numbers, A (0 < A) , B (0 < B) and C (0 < C).
+
+Output
+Print all the classifications of the triangle presented in the input.//
+
+
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+ 
+int main() {
+    
+    double a, b, c, x, y, z;
+    
+    scanf("%lf %lf %lf", &a, &b, &c);
+    
+    if(a <= c && c <= b){
+        
+        x = b;
+        y = c;
+        z = a;
+    }
+    if(a <= b && b <= c){
+        
+        x = c;
+        y = b;
+        z = a;
+    }
+    if(b <= a && a <= c){
+        
+        x = c;
+        y = a;
+        z = b;
+    }
+    if(b <= c && c <= a){
+        
+        x = a;
+        y = c;
+        z = b;
+    }
+    if(c <= a && a <= b){
+        
+        x = b;
+        y = a;
+        z = c;
+    }
+    if(c <= b && b <= a){
+        
+        x = a;
+        y = b;
+        z = c;
+    }
+    
+    if(x >= (y+z)){
+        
+        printf("NAO FORMA TRIANGULO\n");
+    }
+    else{
+	
+    if(pow(x,2.0) == (pow(y,2.00) + pow(z,2.00))){
+        
+        printf("TRIANGULO RETANGULO\n");
+    }
+    
+    if(pow(x,2.0) > (pow(y,2.00) + pow(z,2.00))){
+        
+        printf("TRIANGULO OBTUSANGULO\n");
+    }
+    if(pow(x,2.0) < (pow(y,2.00) + pow(z,2.00))){
+        
+        printf("TRIANGULOO ACUTANGULO\n");
+    }
+    
+    if(x == y && x == z){
+        
+        printf("TRIANGULO EQUILATERO\n");
+    }
+    if((x == y && y != z) || (x == z && z != y) || (y == x && x != z) || (y == z && z != x) || (z == x && x != y) || (z == y && y != x)){
+        
+     printf("TRIANGULO ISOSCELES\n");   
+    }
+    }
+        
+    return 0;
+}
