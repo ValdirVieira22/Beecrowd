@@ -1,0 +1,44 @@
+//In this problem, your job is to read three Portuguese words. These words define an animal according to the table below, from left to right. After, print the chosen animal defined by these three words.
+
+Input
+The input contains 3 words, one by line, that will be used to identify the animal, according to the above table, with all letters in lowercase.
+
+Output
+Print the animal name according to the given input.//
+
+
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+ 
+int main() {
+    
+    char a[30], b[30], c[30];
+    char a1[] = "vertebrado", a2[] = "invertebrado", b1[] = "ave" , b2[] = "mamifero", b3[] = "inseto", b4[] = "anelideo", c1[] = "carnivoro", c2[] = "herbivoro", c3[] = "onivoro", c4[] = "hematofago";
+	char d1[] = "aguia", d2[] = "pomba", d3[] = "homem", d4[] = "vaca", d5[] = "pulga", d6[] = "lagarta", d7[] = "sanguessuga" , d8[] = "minhoca";
+	
+	scanf("%s %s %s", &a, &b, &c);
+	
+	if(strcmp(a, a1) == 0){
+		if(strcmp(b, b1) == 0){
+			if(strcmp(c, c1) == 0){ printf("aguia\n");}
+			else if(strcmp(c, c3) == 0)	{ printf("pomba\n");}
+		}
+		else if(strcmp(b, b2) == 0){
+				if(strcmp(c, c3) == 0){ printf("homem\n");}
+			else if(strcmp(c, c2) == 0){ printf("vaca\n");}
+		}
+	}
+	else if(strcmp(a, a2) == 0){
+		if(strcmp(b, b3) == 0){
+			if(strcmp(c, c4) == 0){ printf("pulga\n");}
+			else if(strcmp(c, c2) == 0){ printf("lagarta\n");}	
+		}
+		else if(strcmp(b, b4) == 0){
+			if(strcmp(c, c4) == 0){ printf("sanguessuga\n");}
+			else if(strcmp(c, c3) == 0){ printf("minhoca\n");}
+		}
+	}
+    
+    return 0;
