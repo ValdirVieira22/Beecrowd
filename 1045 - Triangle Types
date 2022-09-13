@@ -13,78 +13,58 @@ Print all the classifications of the triangle presented in the input.//
 
 
 
-#include <iostream>
+#include<stdio.h>
 #include <math.h>
-using namespace std;
- 
+
 int main() {
     
-    double a, b, c, x, y, z;
+    double a, b, c, x;
     
     scanf("%lf %lf %lf", &a, &b, &c);
     
-    if(a <= c && c <= b){
-        
-        x = b;
-        y = c;
-        z = a;
-    }
-    if(a <= b && b <= c){
-        
-        x = c;
-        y = b;
-        z = a;
-    }
-    if(b <= a && a <= c){
-        
-        x = c;
-        y = a;
-        z = b;
-    }
-    if(b <= c && c <= a){
-        
-        x = a;
-        y = c;
-        z = b;
-    }
-    if(c <= a && a <= b){
-        
-        x = b;
-        y = a;
-        z = c;
-    }
-    if(c <= b && b <= a){
-        
-        x = a;
-        y = b;
-        z = c;
-    }
-    
-    if(x >= (y+z)){
+    if(a < b){
+    	x = a;
+    	a = b;
+    	b = x;
+}
+	
+    if(b < c){
+     x = b;
+     b = c;
+     c = x;
+}
+
+   if(a < b){
+    x = a;
+    a = b;
+    b = x;
+}     
+  
+  if(a >= (b+c)){
         
         printf("NAO FORMA TRIANGULO\n");
     }
     else{
 	
-    if(pow(x,2.0) == (pow(y,2.00) + pow(z,2.00))){
+    if(pow(a,2.0) == (pow(b,2.00) + pow(c,2.00))){
         
         printf("TRIANGULO RETANGULO\n");
     }
     
-    if(pow(x,2.0) > (pow(y,2.00) + pow(z,2.00))){
+    if(pow(a,2.0) > (pow(b,2.00) + pow(c,2.00))){
         
         printf("TRIANGULO OBTUSANGULO\n");
     }
-    if(pow(x,2.0) < (pow(y,2.00) + pow(z,2.00))){
+    if(pow(a,2.0) < (pow(b,2.00) + pow(c,2.00))){
         
         printf("TRIANGULOO ACUTANGULO\n");
     }
     
-    if(x == y && x == z){
+    if(a == b && a == c){
         
         printf("TRIANGULO EQUILATERO\n");
     }
-    if((x == y && y != z) || (x == z && z != y) || (y == x && x != z) || (y == z && z != x) || (z == x && x != y) || (z == y && y != x)){
+    if((a == b && b != c) || (a == c && c != b) || (b == a && a != c) || (b == c && c != a) || (c == a && a != b) || (c == b && b != a)){
         
      printf("TRIANGULO ISOSCELES\n");   
     }
